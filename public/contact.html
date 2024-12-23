@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CONTACT US-Fashion Fusion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .details img {
+            width: 100%;
+            height: 800px;
+
+        }
+
+        .con a {
+            color: rgb(5, 251, 5);
+            font-size: 20px;
+        }
+
+        .con a:hover {
+            color: wheat;
+        }
+
+        .icon1 {
+            position: absolute;
+            top: 25%;
+            left: 60px;
+        }
+
+        .icon2 {
+            position: absolute;
+            top: 25%;
+            left: 250px;
+        }
+
+        .details {
+            position: relative;
+            text-align: left;
+            color: white;
+        }
+
+        .details h1 {
+            position: absolute;
+            top: 10%;
+            left: 50px;
+            color: orange;
+            padding: 3px;
+      
+        }
+
+        .one {
+            position: absolute;
+            left: 60px;
+            top: 33%;
+            font-size: 25px;
+        }
+
+        .two {
+            position: absolute;
+            left: 60px;
+            top: 46%;
+            font-size: 25px;
+        }
+
+        .three {
+            position: absolute;
+            left: 60px;
+            top: 60%;
+            font-size: 25px;
+        }
+
+        .four {
+            position: absolute;
+            left: 60px;
+            top: 75%;
+            font-size: 25px;
+        }
+
+        input[type=text],
+        input[type=email],
+        textarea {
+
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+
+            resize: vertical;
+        }
+
+
+        button {
+            position: absolute;
+            left: 35%;
+            top: 95%;
+            font-size: 20px;
+            color: green;
+            background-color: lawngreen;
+            border: 1px solid greenyellow;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(42, 68, 3);
+            transform: scale(1.1);
+            color: white;
+        }
+
+        span {
+            color: red;
+        }
+
+        .Footer {
+            background-color: black;
+            color: white;
+            font-size: 16px;
+
+
+        }
+
+        .Footer h1 {
+            text-align: center;
+            padding: 5px 10px 10px
+        }
+
+        .content-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .content h3 {
+            padding: 4px;
+            border: 1px dashed white;
+            width: 150px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content a {
+            font-family: 'Times New Roman', Times, serif;
+            display: block;
+            color: wheat;
+            text-align: left;
+            margin-left: 25px;
+            padding: 4px;
+        }
+
+        .content a:hover {
+            color: yellow;
+        }
+
+        .cards {
+            text-align: right;
+            margin-right: 5px;
+
+        }
+
+        .cards img {
+            height: 20px;
+            width: 60px;
+        }
+
+        .cards img:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        @media screen and (max-width: 425px) {
+            .details img {
+                height: 500px;
+            }
+
+            .details h1 {
+                left: 10px;
+                top: 5px;
+            }
+
+            .icon1 {
+                left: 10px;
+                top: 80px;
+
+            }
+
+            .icon2 {
+                left: 120px;
+                top: 80px;
+            }
+
+            .one {
+                left: 10px;
+                top: 25%;
+                font-size: 15px;
+            }
+
+            .two {
+                left: 10px;
+                top: 40%;
+                font-size: 15px;
+            }
+
+            .three {
+                left: 10px;
+                top: 55%;
+                font-size: 15px;
+            }
+
+            .four {
+                left: 10px;
+                top: 69%;
+                font-size: 15px;
+            }
+
+            button {
+                left: 75%;
+                top: 90%;
+            }
+
+            .Footer {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            .content-box {
+
+                grid-template-columns: repeat(2, 2fr)
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-left: 20px;
+                padding: 2px;
+
+            }
+
+            .content a {
+                margin-left: 10px;
+            }
+
+
+            .cards img {
+                height: 10px;
+                width: 30px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="details">
+        <img src="Images/Contact.jpeg">
+        <h1> CONTACT DETAILS</h1>
+        <div class="con">
+            <div class="icon1">
+                <a href="https://www.gmail.com/"><i class="fa fa-envelope">&nbsp E Mail</i></a>
+            </div>
+            <div class="icon2">
+                <a href="tel:1234567890"><i class="fa fa-phone">&nbsp PHONE NUMBER</i></a>
+            </div>
+
+        </div>
+        <form id="sform" action="#" onsubmit="return SubmitForm()">
+            <div class="one">
+                <label for="name">NAME :</label>
+                <input type="text" id="name" placeholder="Your Name Here">
+                <span id="namecheck"></span>
+            </div>
+            <div class="two">
+                <label for="email">EMAIL :</label>
+                <input type="email" id="email" placeholder="Your Email Id Here"></email>
+                <span id="mailcheck"></span>
+            </div>
+            <div class="three">
+                <label for="subject">SUBJECT :</label>
+                <input type="text" id="subject" placeholder="Your Subject Here">
+                <span id="subcheck"></span>
+            </div>
+            <div class="four">
+                <label for="message">MESSAGE:</label>
+                <textarea id="message" placeholder="Your Message Here" style="height: 100px;"></textarea>
+                <span id="msgcheck"></span>
+            </div>
+
+            <button type="submit">SUBMIT</button>
+
+        </form>
+
+    </div>
+
+    <div class="Footer">
+
+        <h1>FASHION FUSION</h1>
+        <div class="content-box">
+            <div class="content">
+                <h3>Contact us</h3>
+
+                <a href="https://www.gmail.com/"><i class="fa fa-envelope">&nbsp E Mail</i></a>
+                <a href="tel:1234567890"><i class="fa fa-phone">&nbsp PHONE NUMBER</i></a>
+
+            </div>
+            <div class="content">
+                <h3>Quick Lines</h3>
+
+                <ul>
+                    <li><a href="H.html">HOME</a></li>
+                    <li><a href="about.html">OUR STORY</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="Fashion.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Get Help</h3>
+
+                <ul>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Follow Us</h3>
+
+                <a href="https://www.facebook.com/"> <i class="fa fa-facebook"> &nbsp FACEBOOK</i></a>
+                <a href="https://www.instagram.com/"> <i class="fa fa-instagram"> &nbsp INSTAGRAM</i></a>
+                <a href="https://www.twitter.com/"> <i class="fa fa-twitter"> &nbsp TWITTER</i></a>
+                <a href="https://www.linkedin.com/"> <i class="fa fa-linkedin"> &nbsp LINKEDIN</i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube">&nbsp YOUTUBE</i></a>
+
+            </div>
+        </div>
+
+        <p>&copy; 2024 FASHION FUSION. All rights reserved</p>
+        <div class="cards">
+            <a href="https://www.visa.co.in/"><img src="Images/visa.png"></a>
+            <a href="https://pay.google.com/"><img src="Images/gpay.png"></a>
+            <a href="https://paypal.com/"><img src="Images/paypal.png"></i></a>
+            <a href="https://www.mastercard.co.in/"><img src="Images/mastercard.png"></a>
+            <a href="https://stripe.com/"><img src="Images/stripe.png"></i></a>
+        </div>
+    </div>
+    <script>
+        function SubmitForm() {
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value
+            var message = document.getElementById('message').value;
+
+            if (name == '') {
+                document.getElementById('namecheck').innerHTML = "please fill username";
+                return false;
+            }
+            else if (!isNaN(name)) {
+                document.getElementById('namecheck').innerHTML = "please fill characters";
+                return false;
+            }
+            if (email == '') {
+                document.getElementById('mailcheck').innerHTML = "please fill email id";
+                return false;
+            } if (subject == '') {
+                document.getElementById('subcheck').innerHTML = "please fill subject";
+                return false;
+            } if (message == '') {
+                document.getElementById('msgcheck').innerHTML = "please fill message ";
+                return false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

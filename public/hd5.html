@@ -1,0 +1,887 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Home Decor - Fashion Fusion </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+
+        }
+
+        .Header {
+            background-image: url("Images/Bg.jpeg");
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0px 25px;
+            height: 170px;
+            align-items: center;
+        }
+
+        .logo img {
+            filter: invert(100%)
+        }
+
+        .logo h2 {
+            color: white;
+            border: 10px white thick;
+            display: inline;
+        }
+
+        .search input {
+            height: 40px;
+            width: 130%;
+            text-align: center;
+            border-radius: 10px;
+            font: 20px cursive;
+        }
+
+        .icons {
+            text-align: right;
+        }
+
+        .icons .fa {
+            color: white;
+            font-size: 20px;
+            padding: 0px 10px;
+            transition: 0.6s;
+        }
+
+        .icons .fa:hover {
+            font-size: 180%;
+            color: aqua
+        }
+
+        .links {
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+        }
+
+        .links a {
+            color: whitesmoke;
+            display: inline;
+            padding: 5px 30px;
+            font-size: 20px;
+            text-decoration: none;
+        
+            transition: 0.8s;
+            border: 2px solid pink;
+            margin-left: 40px;
+        }
+
+        .links a:hover {
+            background-color: black;
+            text-decoration: underline;
+            color: palevioletred;
+            font-size: 170%;
+          
+        }
+
+
+        .drop {
+            position: relative;
+            display: inline-block;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .drop-content a {
+            background-color: #080808;
+            border: 2px solid black;
+            color: white;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .drop-content a:hover {
+            background-color: #ddd;
+            transition: none;
+        }
+
+        .drop:hover .drop-content {
+            display: block;
+        }
+
+
+        .MainBody {
+            background-color: Grey;
+            padding-top: 5px;
+        }
+
+        .mainpro {
+            font-family: 'Times New Roman', Times, serif;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .pro img {
+            padding: 0px;
+            margin-top: 20px;
+            margin-left: 40px;
+            border: 2px solid black;
+            height: 600px;
+        }
+
+        .more-img {
+            margin-left: 30px;
+
+        }
+
+        .more-img img {
+            display: inline;
+            width: 120px;
+            height: 140px;
+            margin-left: 10px;
+            margin-top: 2px;
+            margin-bottom: 5px;
+        }
+
+        .detail {
+            margin-top: 50px;
+        }
+
+        .detail p {
+            padding: 5px;
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        .detail h1 {
+            font-weight: bold;
+
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        .detail h4 {
+            margin: 20px 0px;
+            font-size: 25px;
+            font-weight: bold;
+
+        }
+
+        .detail select {
+            display: block;
+            padding: 10px;
+            margin-top: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 10px 0px;
+            font-size: 15px;
+            border: 1px solid #ff523b;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+
+        .detail input {
+            margin: 10px 0px;
+            width: 80px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .btn {
+            margin: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            background-color: #ff523b;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        .btn:hover {
+            background-color: #b01a06;
+        }
+
+        .prodetail h3 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px 0px;
+        }
+
+        .prodetail .fa {
+            color: #6d1003;
+            margin-left: 20px;
+        }
+
+        .prodetail p {
+            display: block;
+            font-size: 20px;
+            padding: 5px;
+        }
+.prodetail b{
+    font-family: 'Times New Roman', Times, serif;
+}
+        .MainBody h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            margin-left: 30px;
+            margin-top: 30px;
+            text-decoration: underline;
+        }
+
+        .product {
+            margin-left: 30px;
+        }
+
+        .item {
+            display: inline-block;
+            width: 250px;
+            margin: 10px 20px;
+            text-align: left;
+            background: #080808;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s ease;
+            border-radius: 40px;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item img {
+            height: 260px;
+            width: 250px;
+            margin-bottom: 10px;
+            display: inline;
+            border-radius: 40px;
+        }
+
+        .item h3 {
+            color: wheat;
+            font-size: 25px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item .price {
+            color: #4caf50;
+            font-size: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .price a {
+            font-size: 25px;
+            color: white;
+        }
+
+        .price a:hover {
+            color: red;
+            transition: 0.3s ease;
+        }
+
+        .heart-icon-link.active{
+            color:red;
+            background-color: black;
+        }
+        .Footer {
+            background-color: black;
+            color: white;
+            font-size: 16px;
+
+
+        }
+
+        .Footer h1 {
+            text-align: center;
+            padding: 5px 10px 10px
+        }
+
+        .content-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .content h3 {
+            padding: 4px;
+            border: 1px dashed white;
+            width: 150px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content a {
+            font-family: 'Times New Roman', Times, serif;
+            display: block;
+            color: wheat;
+            text-align: left;
+            margin-left: 25px;
+            padding: 4px;
+        }
+
+        .content a:hover {
+            color: yellow;
+        }
+
+        .cards {
+            text-align: right;
+            margin-right: 5px;
+
+        }
+
+        .cards img {
+            height: 20px;
+            width: 60px;
+        }
+
+        .cards img:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+        @media screen and (max-width: 768px) {
+            .Header {
+                padding: 0px;
+                height: 150px;
+            }
+
+            .logo img {
+                margin-left: 20px;
+                height: 50px;
+            }
+
+            .logo h2 {
+                font-size: 10px;
+            }
+
+            .search input {
+                height: 30px;
+                width: 100%;
+                font: 10px cursive;
+            }
+
+
+            .links a {
+                margin-left: 10px;
+                font-size: 15px;
+                padding: 5px 15px;
+
+            }
+
+            .links a:hover {
+                font-size: 90%;
+            }
+
+            .drop-content {
+
+                width: 150px;
+                margin-top: 5px;
+            }
+
+            .pro img {
+                height: 300px;
+                width: 250px;
+            }
+
+            .more-img img {
+                width: 48px;
+                height: 50px;
+            }
+
+            .detail {
+                margin-top: 20px;
+            }
+
+            .detail h1 {
+                font-size: 25px;
+            }
+
+            .prodetail h3 {
+                padding: 10px 0px;
+            }
+
+            .prodetail p {
+                padding: 2px;
+                font-size: 15px;
+            }
+
+            .item {
+                padding: 8px;
+                margin: 5px 10px;
+                width: 150px;
+                height: 270px;
+            }
+
+            .item img {
+                height: 200px;
+                width: 150px;
+            }
+
+            .item h3 {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .item .price {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .price a {
+                font-size: 20px;
+            }
+
+            .Footer {
+                font-size: 10px;
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-left: 25px;
+
+            }
+
+            .cards img {
+                height: 15px;
+                width: 50px;
+
+            }
+        }
+        @media screen and (max-width: 425px) {
+            .Header {
+                height: 120px;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .logo h2 {
+                display: block;
+                font-size: 8px;
+            }
+
+            .search input {
+                height: 15px;
+                width: 100%;
+                font: 8px cursive;
+            }
+
+            .icons .fa {
+                font-size: 14px;
+                padding: 0px 4px;
+            }
+
+            .links {
+                display: grid;
+                grid-template-columns: repeat(3, 2fr)
+            }
+
+            .links a {
+                text-decoration: underline;
+                border: none;
+                padding: 5px 5px;
+                font-size: 10px;
+                margin-left: 0px;
+            }
+
+            .links a:hover {
+                font-size: 100%;
+            }
+
+            .drop-content {
+
+                width: 150px;
+                margin-top: 5px;
+            }
+
+            .drop-content a {
+
+                text-decoration: none;
+
+            }
+
+            .pro img {
+                margin-left: 10px;
+                width: 180px;
+                height: 230px;
+            }
+
+            .more-img {
+                margin-left: 5px;
+            }
+
+            .more-img img {
+                width: 30px;
+                height: 40px;
+            }
+
+            .detail {
+                margin-top: 10px;
+            }
+
+            .detail h1 {
+                font-size: 20px;
+            }
+
+            .detail h4 {
+                font-size: 18px;
+                margin: 10px;
+            }
+
+            .detail select {
+                padding: 5px;
+                margin: 5px;
+            }
+
+            .detail input {
+                margin: 5px;
+                height: 30px;
+                width: 30px;
+            }
+            .prodetail h3 {
+                font-size: 18px;
+            }
+
+            .item {
+                padding: 10px;
+                margin: 5px;
+                width: 170px;
+            }
+
+            .item img {
+                height: 220px;
+                width: 170px;
+            }
+
+            .item h3 {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .item .price {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .price a {
+                font-size: 15px;
+            }
+
+            .Footer {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            .content-box {
+
+                grid-template-columns: repeat(2, 2fr)
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-top: 10px;
+
+            }
+
+            .content a {
+                margin-left: 10px;
+            }
+
+
+            .cards img {
+                height: 10px;
+                width: 30px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <div class="logo">
+            <img src="Images/logo.png" alt="logo image">
+            <h2>Fashion Fusion</h2>
+
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search For Products..">
+        </div>
+        <div class="icons">
+            <a href="fav.html"><i class="fa fa-heart"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <a href="user.html"><i class="fa fa-user-circle"></i></a>
+            
+        </div>
+        <div class="links">
+
+            <a href="H.html">HOME</a>
+            <div class="drop">
+                <a href="Fashion.html">FASHION</a>
+                <div class="drop-content">
+                    <a href="Fashion.html">All</a>
+                    <a href="MensWear.html">Men's wear</a>
+                    <a href="WomensWear.html">Women wear</a>
+                    <a href="KidsWear.html">Kids wear</a>
+                </div>
+            </div>
+            <div class="drop">
+                <a href="Accessory.html" class="active">ACCESSORIES</a>
+                <div class="drop-content">
+                    <a href="Accessory.html">All</a>
+                    <a href="Footwear.html">FootWear</a>
+                    <a href="Beauty.html">Beauty Products</a>
+                    <a href="fitness.html">Fitness Products</a>
+                    <a href="ornaments.html">Ornaments</a>
+                    <a href="decor.html">Home Decor</a>
+                </div>
+            </div>
+            <a href="login.html">SIGNUP/LOGIN</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+
+        </div>
+
+    </div>
+
+    <div class="MainBody">
+        <div class="mainpro">
+            <div class="pro">
+                <img id="product-img" src="Images/piece.jpeg" width="80%" id="pro-img">
+                <div class="more-img">
+                    <img src="Images/piece.jpeg" class="small-img">
+                    <img src="Images/hd5-1.webp" class="small-img">
+                    <img src="Images/hd5-2.webp" class="small-img">
+                </div>
+            </div>
+            <div class="detail">
+                <p> Home>Home Decor</p>
+                
+                <h1 id="product-name">Multicolor Iron Abstract Showpiece Home Decor</h1>
+                <h4 id="product-price">RS 1499/-</h4>
+                
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" id="add-to-cart">Add To Cart</a>
+
+                <div class="prodetail">
+                    <h3>PRODUCT DETAILS<i class="fa fa-indent"></i></h3>
+                    <p><b>Model Number: </b>9100000009223</p>
+                    <p><b>Sub-category :</b> Home Decor - Table Decor & Handicrafts</p>  
+                    <p><b>Type :</b> Handicraft & Artifact Showpiece</p>   
+                    <p><b>Regional Speciality :</b> No Regional Specialty</p>
+                    <p><b>Weight :</b> 2000 g</p>
+                    <p><b>Color :</b> MULTI COLOUR</p>
+                  
+                </div>
+            </div>
+        </div>
+
+        <h2>RELATED PRODUCTS</h2>
+        <div class="item">
+            <a href="hd1.html"><img src="Images/decor.jpeg"></a>
+            <h3>Royalbox Meditating Buddha Statue For Home Decor Idol Decorative Showpiece - 17 cm </h3>
+            <p class="price">From 449/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="hd2.html"><img src="Images/holder.jpeg"></a>
+            <h3>Wall Key Holder</h3>
+            <p class="price">From 199/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="hd3.html"><img src="Images/curtain.jpeg"></a>
+            <h3>Blooming Vines Floral Soft Pink Curtains Set Of 2</h3>
+            <p class="price">Save 20% &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="hd4.html"><img src="Images/paint.jpeg"></a>
+            <h3>Painting for wall decoration Abstract tree wall painting</h3>
+            <p class="price">Min 10% Off- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class="Footer">
+
+        <h1>FASHION FUSION</h1>
+        <div class="content-box">
+            <div class="content">
+                <h3>Contact us</h3>
+                <br>
+                <a href="https://www.gmail.com/"><i class="fa fa-envelope">&nbsp E Mail</i></a>
+                <a href="tel:1234567890"><i class="fa fa-phone">&nbsp PHONE NUMBER</i></a>
+
+            </div>
+            <div class="content">
+                <h3>Quick Lines</h3>
+                <br>
+                <ul>
+                    <li><a href="H.html">HOME</a></li>
+                    <li><a href="about.html">OUR STORY</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="Fashion.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Get Help</h3>
+                <br>
+                <ul>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Follow Us</h3>
+                <br>
+                <a href="https://www.facebook.com/"> <i class="fa fa-facebook"> &nbsp FACEBOOK</i></a>
+                <a href="https://www.instagram.com/"> <i class="fa fa-instagram"> &nbsp INSTAGRAM</i></a>
+                <a href="https://www.twitter.com/"> <i class="fa fa-twitter"> &nbsp TWITTER</i></a>
+                <a href="https://www.linkedin.com/"> <i class="fa fa-linkedin"> &nbsp LINKEDIN</i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube">&nbsp YOUTUBE</i></a>
+
+            </div>
+        </div>
+
+        <p>&copy; 2024 FASHION FUSION. All rights reserved</p>
+        <div class="cards">
+            <a href="https://www.visa.co.in/"><img src="Images/visa.png"></a>
+            <a href="https://pay.google.com/"><img src="Images/gpay.png"></a>
+            <a href="https://paypal.com/"><img src="Images/paypal.png"></i></a>
+            <a href="https://www.mastercard.co.in/"><img src="Images/mastercard.png"></a>
+            <a href="https://stripe.com/"><img src="Images/stripe.png"></i></a>
+        </div>
+    </div>
+
+    <script>
+        var proimg = document.getElementById("pro-img");
+        var smallimg = document.getElementsByClassName("small-img");
+        smallimg[0].onclick = function () {
+            proimg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            proimg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            proimg.src = smallimg[2].src;
+        }
+        
+
+        //when heart item is clicked
+document.querySelectorAll('.heart-icon-link').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the link's default behavior
+        
+        // Get the item details
+        const itemName = this.closest('.item').querySelector('h3').innerText;
+        const itemPrice = this.closest('.item').querySelector('.price').innerText;
+        const itemImage = this.closest('.item').querySelector('img').src;
+
+        // Store the item details in localStorage
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Get existing favorites or empty array
+         // Check if the item is already in favorites
+         const existingItemIndex = favorites.findIndex(item => item.name === itemName);
+
+         if (existingItemIndex > -1) {
+            // If the item is already in favorites, remove it
+            favorites.splice(existingItemIndex, 1);  // Remove the item from the array
+            localStorage.setItem('favorites', JSON.stringify(favorites));  // Update localStorage
+            this.classList.remove('active');  // Remove the "active" class to reset the heart color
+        } else {
+            // If the item is not in favorites, add it
+            const newItem = { name: itemName, price: itemPrice, imageUrl: itemImage };
+            favorites.push(newItem);  // Add the new item to the favorites array
+            localStorage.setItem('favorites', JSON.stringify(favorites));  // Save to localStorage
+            this.classList.add('active');  // Add the "active" class to turn the heart red
+        }
+    });
+});
+
+// When the page loads, check if an item has been liked, and make the heart icon red
+document.addEventListener('DOMContentLoaded', function() {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Get favorites from localStorage
+    const allHearts = document.querySelectorAll('.heart-icon-link'); // Get all heart icons
+
+    // For each heart icon, check if the item is in the favorites list
+    allHearts.forEach(heart => {
+        const itemName = heart.closest('.item').querySelector('h3').innerText; // Get item name
+
+        // If the item is in the favorites list, add the "active" class to the heart
+        if (favorites.some(item => item.name === itemName)) {
+            heart.classList.add('active'); // Add the active class (making it red)
+        }
+    });
+});
+
+document.getElementById("add-to-cart").addEventListener("click", function(event) {
+        event.preventDefault();
+
+        // Get product details
+        const productName = document.getElementById("product-name").innerText;
+        const productPrice = document.getElementById("product-price").innerText;
+        const productImage = document.getElementById("product-img").src;
+        const quantity = document.getElementById("quantity").value;
+
+        // Prepare product object
+        const product = {
+            name: productName,
+            price: parseInt(productPrice.replace('RS ', '').replace('/-', '')),
+            imageUrl: productImage,
+            quantity: quantity
+        };
+
+        // Get existing cart from localStorage or initialize empty cart
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+         // Check if the product already exists in the cart
+         const existingProductIndex = cart.findIndex(item => item.name === product.name);
+
+if (existingProductIndex !== -1) {
+    // If the product exists, update the quantity
+    cart[existingProductIndex].quantity +=parseInt(product.quantity);
+} else {
+    // If it's a new product, add it to the cart
+    cart.push(product);
+}
+        // Save updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Item added to cart!");
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,727 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>ACCESSORIES - Fashion Fusion</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+
+        }
+
+        .Header {
+            background-image: url("Images/Bg.jpeg");
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0px 25px;
+            height: 170px;
+            align-items: center;
+        }
+
+        .logo img {
+            filter: invert(100%)
+        }
+
+        .logo h2 {
+            color: white;
+            border: 10px white thick;
+            display: inline;
+        }
+
+        .search input {
+            height: 40px;
+            width: 130%;
+            text-align: center;
+            border-radius: 10px;
+            font: 20px cursive;
+        }
+
+        .icons {
+            text-align: right;
+        }
+
+        .icons .fa {
+            color: white;
+            font-size: 20px;
+            padding: 0px 10px;
+            transition: 0.6s;
+        }
+
+        .icons .fa:hover {
+            font-size: 180%;
+            color: aqua
+        }
+
+        .links {
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+        }
+
+        .links a {
+            color: whitesmoke;
+            display: inline;
+            padding: 5px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            
+            transition: 0.8s;
+            border: 2px solid pink;
+            margin-left: 40px;
+        }
+
+        .links a:hover {
+            background-color: black;
+            text-decoration: underline;
+            color: palevioletred;
+            font-size: 170%;
+            
+        }
+
+        .active {
+            background-color: gray;
+            font-style: oblique;
+            color: wheat;
+        }
+
+        .drop {
+            position: relative;
+            display: inline-block;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .drop-content a {
+            background-color: #080808;
+            border: 2px solid black;
+            color: white;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .drop-content a:hover {
+            background-color: #ddd;
+            transition: none;
+        }
+
+        .drop:hover .drop-content {
+            display: block;
+        }
+
+        .MainBody {
+            background-color: Grey;
+            padding-top: 5px;
+        }
+
+        .head {
+           
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        .head h1 {
+            margin-left: 10px;
+            font-family: 'Lucida Sans';
+            padding: 5px;
+            text-decoration: double underline;
+            font-size: 35px;
+            margin-top: 10px;
+        }
+
+        select {
+            border: 1px solid #ff523b;
+            padding: 2px;
+            height: 30px;
+            width: 30%;
+            margin-left: 65%;
+            margin-top: 20px;
+      
+            font-size: 20px;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        .Product h1 {
+            text-align: center;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            border: 5px double black;
+           
+        }
+
+        .item {
+            display: inline-block;
+            width: 200px;
+            margin: 10px 15px;
+            text-align: left;
+            background: #080808;
+            padding: 15px;
+            height: 330px;
+            text-align: center;
+            transition: 0.3s ease;
+            border-radius: 40px;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item img {
+            height: 250px;
+            width: 200px;
+            margin-bottom: 10px;
+            display: inline;
+            border-radius: 40px;
+        }
+
+        .item h3 {
+            color: wheat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item .price {
+            color: #4caf50;
+            font-size: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .price a {
+            font-size: 25px;
+            color: white;
+        }
+
+        .price a:hover {
+            color: red;
+            transition: 0.3s ease;
+        }
+
+        .heart-icon-link.active{
+            color:red;
+            background-color: black;
+        }
+
+        .Footer {
+            background-color: black;
+            color: white;
+            font-size: 16px;
+
+
+        }
+
+        .Footer h1 {
+            text-align: center;
+            padding: 5px 10px 10px
+        }
+
+        .content-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .content h3 {
+            padding: 4px;
+            border: 1px dashed white;
+            width: 150px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content a {
+            font-family: 'Times New Roman', Times, serif;
+            display: block;
+            color: wheat;
+            text-align: left;
+            margin-left: 25px;
+            padding: 4px;
+        }
+
+        .content a:hover {
+            color: yellow;
+        }
+
+        .cards {
+            text-align: right;
+            margin-right: 5px;
+
+        }
+
+        .cards img {
+            height: 20px;
+            width: 60px;
+        }
+
+        .cards img:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        @media screen and (max-width: 768px) {
+            .Header {
+                padding: 0px;
+                height: 150px;
+            }
+
+            .logo img {
+                margin-left: 20px;
+                height: 50px;
+            }
+
+            .logo h2 {
+                font-size: 10px;
+            }
+
+            .search input {
+                height: 30px;
+                width: 100%;
+                font: 10px cursive;
+            }
+           
+
+            .links a {
+
+                margin-left: 10px;
+                font-size: 15px;
+                padding: 5px 15px;
+
+            }
+            .links a:hover{
+            font-size: 90%;
+           }
+
+         .drop-content {
+            
+            width: 150px;
+            margin-top: 5px;
+        }
+
+        .MainBody {
+                width: 100%;
+            }
+
+            .head {
+                display: inline;
+            }
+
+            .head h1 {
+                font-size: 25px;
+            }
+
+            select {
+                display: none;
+            }
+
+            .item {
+                padding: 10px;
+                margin: 5px 20px;
+                width: 180px;
+                height: 280px;
+            }
+
+            .item img {
+                height: 220px;
+                width: 180px;
+            }
+
+            .item h3 {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .item .price {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .price a {
+                font-size: 20px;
+            }
+
+            .Footer {
+                font-size: 10px;
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-left: 25px;
+
+            }
+
+            .cards img {
+                height: 15px;
+                width: 50px;
+
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .Header {
+                height: 120px;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .logo h2 {
+                display: block;
+                font-size: 8px;
+            }
+
+            .search input {
+                height: 15px;
+                width: 100%;
+                font: 8px cursive;
+            }
+
+            .icons .fa {
+                font-size: 14px;
+                padding: 0px 4px;
+            }
+
+            .links {
+                display: grid;
+                grid-template-columns: repeat(3, 2fr)
+            }
+
+            .links a {
+                text-decoration: underline;
+                border: none;
+                padding: 5px 5px;
+                font-size: 10px;
+                margin-left: 0px;
+            }
+           .links a:hover{
+            font-size: 100%;
+           }
+
+        .drop-content {
+            
+            width: 150px;
+            margin-top: 5px;
+        }
+
+        .drop-content a {
+           
+            text-decoration: none;
+           
+        }
+
+            .MainBody {
+                width: 100%;
+            }
+            
+            .Product h1 {
+                font-size: 20px;
+            }
+
+            .item {
+                padding: 10px;
+                margin: 4px;
+                width: 180px;
+            }
+
+            .item img {
+                height: 220px;
+                width: 180px;
+            }
+
+            .item h3 {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .item .price {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .price a {
+                font-size: 15px;
+            }
+
+            .Footer {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            .content-box {
+
+                grid-template-columns: repeat(2, 2fr)
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-top: 10px;
+
+            }
+
+            .content a {
+                margin-left: 10px;
+            }
+
+
+            .cards img {
+                height: 10px;
+                width: 30px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <div class="logo">
+            <img src="Images/logo.png" alt="logo image">
+            <h2>Fashion Fusion</h2>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search For Products..">
+        </div>
+        <div class="icons">
+            <a href="fav.html"><i class="fa fa-heart"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <a href="user.html"><i class="fa fa-user-circle"></i></a>
+            
+        </div>
+
+        <div class="links">
+
+            <a href="H.html">HOME</a>
+            <div class="drop">
+                <a href="Fashion.html" >FASHION</a>
+                <div class="drop-content">
+                    <a href="Fashion.html">All</a>
+                    <a href="MensWear.html">Men's wear</a>
+                    <a href="WomensWear.html">Women wear</a>
+                    <a href="KidsWear.html">Kids wear</a>
+                </div>
+            </div>
+            <div class="drop">
+                <a href="Accessory.html"class="active">ACCESSORIES</a>
+                <div class="drop-content">
+                    <a href="Accessory.html">All</a>
+                    <a href="Footwear.html">FootWear</a>
+                    <a href="Beauty.html">Beauty Products</a>
+                    <a href="fitness.html">Fitness Products</a>
+                    <a href="ornaments.html">Ornaments</a>
+                    <a href="decor.html">Home Decor</a>
+                   
+                </div>
+            </div>
+            <a href="login.html">SIGNUP/LOGIN</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+
+        </div>
+    </div>
+
+    <div class="MainBody">
+
+        <div class="head">
+            <h1> GYM AND FITNESS PRODUCTS  </h1>
+            <select>
+                <option>Default Sorting</option>
+                <option>Sorting by price</option>
+                <option>Sorting by sale</option>
+                <option>Sorting by popularity</option>
+
+            </select>
+        </div>
+        <div class="item">
+            <a href="fg1.html"><img src="Images/mat.jpeg"></a>
+            <h3>YFMATS 6MM Premium Eva with Tpe blend Anti slip Tearless Yoga mat with carry Bag Maroon 6 mm Yoga Mat</h3>
+            <p class="price">Rs 329/-&nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="#"><img src="Images/fit1.webp"></a>
+            <h3>Oddish Tummy Trimmer 12 inch Double Spring Premium Quality for man and women Gym & Fitness Kit</h3>
+            <p class="price">Rs 246/-&nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="fg2.html"><img src="Images/dumbbell.jpeg"></a>
+            <h3>AMAN FIT PVC Set 3KG X 2 PCS, 1 Pair , Hex , Home Gym Fixed Weight Dumbbell  (3 kg)</h3>
+            <p class="price">Rs 469/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="#"><img src="Images/fit2.webp"></a>
+            <h3>Oddish way to fitness toning tube and hand grip combo kit Gym & Fitness Kit</h3>
+            <p class="price">Rs 249/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="fg3.html"><img src="Images/belt.jpeg"></a>
+            <h3>FONICX FIT Men, Women, Unisex Shapewear Belt for Better Sweating Hot Shaper</h3>
+            <p class="price">Rs 269/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="fg4.html"><img src="Images/sandow.jpeg"></a>
+            <h3>Fitness Designer Gym Stringer Vest, Gym Vest, Racer Y Back, Sports Tank Tops, Sando for Men</h3>
+            <p class="price">Rs 371/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="#"><img src="Images/fit3.webp"></a>
+            <h3>COOL INDIANS GYM Protein Shaker Bottle With Wrist Support Band For Gym Workout & Exercise. Gym & Fitness Kit</h3>
+            <p class="price">Rs 359/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="fg5.html"><img src="Images/band.jpeg"></a>
+            <h3>Resistance Band Tube Home Gym Workout Exercise for Men & Women Resistance Tube</h3>
+            <p class="price">Rs 659/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <div class="item">
+            <a href="#"><img src="Images/fit5.webp"></a>
+            <h3>SeaRegal Strong GripHandle for ChestPress Home&Gym Exercise Push-up Bar Gym & Fitness Kit</h3>
+            <p class="price">Rs 454/- &nbsp; <a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+        </div>
+        <div class="item">
+            <a href="#"><img src="Images/fit4.webp"></a>
+            <h3>FITNESS ROCKET Aerobic Stepper With Professional Ab wheel Roller (68x28x15cms) Gym & Fitness Kit
+            </h3>
+            <p class="price">Rs 849/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+        </div>
+        <br>
+       
+
+    </div>
+    </div>
+    <br>
+    <div class="Footer">
+
+        <h1>FASHION FUSION</h1>
+        <div class="content-box">
+            <div class="content">
+                <h3>Contact us</h3>
+                <br>
+                <a href="https://www.gmail.com/"><i class="fa fa-envelope">&nbsp E Mail</i></a>
+                <a href="tel:1234567890"><i class="fa fa-phone">&nbsp PHONE NUMBER</i></a>
+
+            </div>
+            <div class="content">
+                <h3>Quick Lines</h3>
+                <br>
+                <ul>
+                    <li><a href="H.html">HOME</a></li>
+                    <li><a href="about.html">OUR STORY</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="Fashion.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Get Help</h3>
+                <br>
+                <ul>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Follow Us</h3>
+                <br>
+                <a href="https://www.facebook.com/"> <i class="fa fa-facebook"> &nbsp FACEBOOK</i></a>
+                <a href="https://www.instagram.com/"> <i class="fa fa-instagram"> &nbsp INSTAGRAM</i></a>
+                <a href="https://www.twitter.com/"> <i class="fa fa-twitter"> &nbsp TWITTER</i></a>
+                <a href="https://www.linkedin.com/"> <i class="fa fa-linkedin"> &nbsp LINKEDIN</i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube">&nbsp YOUTUBE</i></a>
+
+            </div>
+        </div>
+        <p>&copy; 2024 FASHION FUSION. All rights reserved</p>
+        <div class="cards">
+            <a href="https://www.visa.co.in/"><img src="Images/visa.png"></a>
+            <a href="https://pay.google.com/"><img src="Images/gpay.png"></a>
+            <a href="https://paypal.com/"><img src="Images/paypal.png"></i></a>
+            <a href="https://www.mastercard.co.in/"><img src="Images/mastercard.png"></a>
+            <a href="https://stripe.com/"><img src="Images/stripe.png"></i></a>
+        </div>
+    </div>
+
+</body>
+<script>
+    //when heart item is clicked
+document.querySelectorAll('.heart-icon-link').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the link's default behavior
+        
+        // Get the item details
+        const itemName = this.closest('.item').querySelector('h3').innerText;
+        const itemPrice = this.closest('.item').querySelector('.price').innerText;
+        const itemImage = this.closest('.item').querySelector('img').src;
+
+        // Store the item details in localStorage
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Get existing favorites or empty array
+         // Check if the item is already in favorites
+         const existingItemIndex = favorites.findIndex(item => item.name === itemName);
+
+         if (existingItemIndex > -1) {
+            // If the item is already in favorites, remove it
+            favorites.splice(existingItemIndex, 1);  // Remove the item from the array
+            localStorage.setItem('favorites', JSON.stringify(favorites));  // Update localStorage
+            this.classList.remove('active');  // Remove the "active" class to reset the heart color
+        } else {
+            // If the item is not in favorites, add it
+            const newItem = { name: itemName, price: itemPrice, imageUrl: itemImage };
+            favorites.push(newItem);  // Add the new item to the favorites array
+            localStorage.setItem('favorites', JSON.stringify(favorites));  // Save to localStorage
+            this.classList.add('active');  // Add the "active" class to turn the heart red
+        }
+    });
+});
+
+// When the page loads, check if an item has been liked, and make the heart icon red
+document.addEventListener('DOMContentLoaded', function() {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Get favorites from localStorage
+    const allHearts = document.querySelectorAll('.heart-icon-link'); // Get all heart icons
+
+    // For each heart icon, check if the item is in the favorites list
+    allHearts.forEach(heart => {
+        const itemName = heart.closest('.item').querySelector('h3').innerText; // Get item name
+
+        // If the item is in the favorites list, add the "active" class to the heart
+        if (favorites.some(item => item.name === itemName)) {
+            heart.classList.add('active'); // Add the active class (making it red)
+        }
+    });
+});
+
+</script>
+
+</html>

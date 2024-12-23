@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Cart-Fashion Fusion </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+
+        }
+
+        .Header {
+            background-image: url("Images/Bg.jpeg");
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0px 25px;
+            height: 170px;
+            align-items: center;
+        }
+
+        .logo img {
+            filter: invert(100%)
+        }
+
+        .logo h2 {
+            color: white;
+            border: 10px white thick;
+            display: inline;
+        }
+
+        .search input {
+            height: 40px;
+            width: 130%;
+            text-align: center;
+            border-radius: 10px;
+            font: 20px cursive;
+        }
+
+        .icons {
+            text-align: right;
+        }
+
+        .icons .fa {
+            color: white;
+            font-size: 20px;
+            padding: 0px 10px;
+            transition: 0.6s;
+        }
+
+        .icons .fa:hover {
+            font-size: 180%;
+            color: aqua
+        }
+
+        .links {
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+        }
+
+        .links a {
+            color: whitesmoke;
+            display: inline;
+            padding: 5px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            
+            transition: 0.8s;
+            border: 2px solid pink;
+            margin-left: 40px;
+        }
+
+        .links a:hover {
+            background-color: black;
+            text-decoration: underline;
+            color: palevioletred;
+            font-size: 170%;
+            
+        }
+
+        .active .fa{
+            
+            color:aqua;
+        }
+
+        .drop {
+            position: relative;
+            display: inline-block;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .drop-content a {
+            background-color: #080808;
+            border: 2px solid black;
+            color: white;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .drop-content a:hover {
+            background-color: #ddd;
+            transition: none;
+        }
+
+        .drop:hover .drop-content {
+            display: block;
+        }
+
+
+        .MainBody {
+            background-color: Grey;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+       
+        
+        th{
+            text-align:center;
+            margin-left: 5px;
+            padding: 5px;
+            color: white;
+            background:#ff523b ;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        td{
+            text-align: center;
+            padding: 10px 5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        td input{
+            width: 40px;
+            height: 30px;
+            padding:5px ;
+        }
+        td a{
+             color: black;
+            font-size: 15px;
+        }
+        td a:hover{
+            color:red;
+        }
+        td img{
+            width:80px;
+        
+        }
+        .total{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .total table{
+            border-top: 3px solid #ff523b;
+            width: 100%;
+            max-width: 400px;
+        }
+        .total td{
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align:left;
+           
+           
+        }
+        .total td input{
+            width:150px;
+            height: 20px;
+        }
+        .total td button{
+            width: 50px;
+            height: 20px;
+            color: blue;
+        }
+        .Footer {
+            background-color: black;
+            color: white;
+            font-size: 16px;
+
+
+        }
+
+        .Footer h1 {
+            text-align: center;
+            padding: 5px 10px 10px
+        }
+
+        .content-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .content h3 {
+            padding: 4px;
+            border: 1px dashed white;
+            width: 150px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content a {
+            font-family: 'Times New Roman', Times, serif;
+            display: block;
+            color: wheat;
+            text-align: left;
+            margin-left: 25px;
+            padding: 4px;
+        }
+
+        .content a:hover {
+            color: yellow;
+        }
+
+        .cards {
+            text-align: right;
+            margin-right: 5px;
+
+        }
+
+        .cards img {
+            height: 20px;
+            width: 60px;
+        }
+
+        .cards img:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .Header {
+                padding: 0px;
+                height: 150px;
+            }
+
+            .logo img {
+                margin-left: 20px;
+                height: 50px;
+            }
+
+            .logo h2 {
+                font-size: 10px;
+            }
+
+            .search input {
+                height: 30px;
+                width: 100%;
+                font: 10px cursive;
+            }
+           
+
+            .links a {
+
+                margin-left: 10px;
+                font-size: 13px;
+                padding: 5px 15px;
+
+            }
+            .links a:hover{
+            font-size: 110%;
+           }
+
+         .drop-content {
+            
+            width: 150px;
+            margin-top: 5px;
+        }
+
+            .Footer {
+                font-size: 10px;
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-left: 25px;
+
+            }
+
+            .cards img {
+                height: 15px;
+                width: 50px;
+
+            }
+        }
+        @media screen and (max-width: 425px) {
+            .Header {
+                height: 120px;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .logo h2 {
+                display: block;
+                font-size: 8px;
+            }
+
+            .search input {
+                height: 15px;
+                width: 100%;
+                font: 8px cursive;
+            }
+
+            .icons .fa {
+                font-size: 14px;
+                padding: 0px 4px;
+            }
+
+            .links {
+                display: grid;
+                grid-template-columns: repeat(3, 2fr)
+            }
+
+            .links a {
+                text-decoration: underline;
+                border: none;
+                padding: 5px 5px;
+                font-size: 10px;
+                margin-left: 0px;
+            }
+           .links a:hover{
+            font-size: 100%;
+           }
+
+        .drop-content {
+            
+            width: 150px;
+            margin-top: 5px;
+        }
+
+        .drop-content a {
+           
+            text-decoration: none;
+           
+        }
+
+          th{
+            font-size: 17px;
+          }
+         
+        td input{
+            height: 20px;
+            width: 10px;
+        }
+            .Footer {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            .content-box {
+
+                grid-template-columns: repeat(2, 2fr)
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-top: 10px;
+
+            }
+
+            .content a {
+                margin-left: 10px;
+            }
+
+
+            .cards img {
+                height: 10px;
+                width: 30px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <div class="logo">
+            <img src="Images/logo.png" alt="logo image">
+            <h2>Fashion Fusion</h2>
+
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search For Products..">
+        </div>
+        <div class="icons">
+            <a href="fav.html"><i class="fa fa-heart"></i></a>
+            <a href="cart.html" class="active" ><i class="fa fa-shopping-cart"></i></a>
+            <a href="user.html"><i class="fa fa-user-circle"></i></a>
+            
+        </div>
+        <div class="links">
+
+            <a href="H.html">HOME</a>
+            <div class="drop">
+                <a href="Fashion.html">FASHION</a>
+                <div class="drop-content">
+                    <a href="Fashion.html">All</a>
+                    <a href="MensWear.html">Men's wear</a>
+                    <a href="WomensWear.html">Women wear</a>
+                    <a href="KidsWear.html">Kids wear</a>
+                </div>
+            </div>
+            <div class="drop">
+                <a href="Accessory.html">ACCESSORIES</a>
+                <div class="drop-content">
+                    <a href="Accessory.html">All</a>
+                    <a href="Footwear.html">FootWear</a>
+                    <a href="Beauty.html">Beauty Products</a>
+                    <a href="fitness.html">Fitness Products</a>
+                    <a href="ornaments.html">Ornaments</a>
+                    <a href="decor.html">Home Decor</a>
+                    
+                </div>
+            </div>
+            <a href="login.html">SIGNUP/LOGIN</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+
+        </div>
+
+    </div>
+
+    <div class="MainBody">
+        <table width="100%">
+            
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub Total</th>
+            </tr>
+
+        </table>
+        <div class="total">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td id="subtotal">Rs 0/-</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td id="tax">Rs 0/-</td>
+                </tr>
+                <tr>
+                    <td>Coupon</td>
+                    <td><div><input type="text" id="coupon-code" placeholder="Enter Coupon Code">
+                        <button id="apply-coupon">Apply</button></div></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td id="total">Rs 0/-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <br>
+    <div class="Footer">
+
+        <h1>FASHION FUSION</h1>
+        <div class="content-box">
+            <div class="content">
+                <h3>Contact us</h3>
+                <br>
+                <a href="https://www.gmail.com/"><i class="fa fa-envelope">&nbsp E Mail</i></a>
+                <a href="tel:1234567890"><i class="fa fa-phone">&nbsp PHONE NUMBER</i></a>
+
+            </div>
+            <div class="content">
+                <h3>Quick Lines</h3>
+                <br>
+                <ul>
+                    <li><a href="H.html">HOME</a></li>
+                    <li><a href="about.html">OUR STORY</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="Fashion.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Get Help</h3>
+                <br>
+                <ul>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Follow Us</h3>
+                <br>
+                <a href="https://www.facebook.com/"> <i class="fa fa-facebook"> &nbsp FACEBOOK</i></a>
+                <a href="https://www.instagram.com/"> <i class="fa fa-instagram"> &nbsp INSTAGRAM</i></a>
+                <a href="https://www.twitter.com/"> <i class="fa fa-twitter"> &nbsp TWITTER</i></a>
+                <a href="https://www.linkedin.com/"> <i class="fa fa-linkedin"> &nbsp LINKEDIN</i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube">&nbsp YOUTUBE</i></a>
+
+            </div>
+        </div>
+
+        <p>&copy; 2024 FASHION FUSION. All rights reserved</p>
+        <div class="cards">
+            <a href="https://www.visa.co.in/"><img src="Images/visa.png"></a>
+            <a href="https://pay.google.com/"><img src="Images/gpay.png"></a>
+            <a href="https://paypal.com/"><img src="Images/paypal.png"></i></a>
+            <a href="https://www.mastercard.co.in/"><img src="Images/mastercard.png"></a>
+            <a href="https://stripe.com/"><img src="Images/stripe.png"></i></a>
+        </div>
+    </div>
+
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
+        // Retrieve cart items from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        // Render cart items
+        let cartTable = document.querySelector("table");
+        let subtotal = 0;
+        
+        cart.forEach(item => {
+            let row = document.createElement("tr");
+            
+            // Product image
+            row.innerHTML = `
+                <td><img src="${item.imageUrl}" width="100"></td>
+                <td>${item.name} <br><a href="#" class="remove-item" data-name="${item.name}">Remove</a></td>
+                <td>Rs ${item.price}</td>
+                <td><input type="number" value="${item.quantity}" class="item-quantity" data-name="${item.name}" min="1"></td>
+                <td class="item-subtotal">Rs ${(item.price * item.quantity)}</td>
+            `;
+            
+            cartTable.appendChild(row);
+            
+            // Update subtotal
+            subtotal += item.price * item.quantity;
+        });
+        
+        // Update totals
+        document.getElementById("subtotal").innerText = `Rs ${subtotal}`;
+        let tax = subtotal * 0.10; // Example: 10% tax
+        document.getElementById("tax").innerText = `Rs ${tax}`;
+        document.getElementById("total").innerText = `Rs ${subtotal + tax}`;
+
+        // Remove item from cart
+        document.querySelectorAll(".remove-item").forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                let itemName = this.getAttribute("data-name");
+                cart = cart.filter(item => item.name !== itemName);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                location.reload(); // Reload page to update cart display
+            });
+        });
+
+        // Update quantity and subtotal when changed
+        document.querySelectorAll(".item-quantity").forEach(input => {
+            input.addEventListener("input", function() {
+                let itemName = this.getAttribute("data-name");
+                let newQuantity = parseInt(this.value);
+                let item = cart.find(item => item.name === itemName);
+                item.quantity = newQuantity;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                
+                // Update subtotal for that item
+                let itemSubtotal = item.price * newQuantity;
+                this.closest("tr").querySelector(".item-subtotal").innerText = `Rs ${itemSubtotal}`;
+                
+                // Recalculate totals
+                updateTotals();
+            });
+        });
+
+        // Apply coupon functionality
+        document.getElementById("apply-coupon").addEventListener("click", function() {
+            let couponCode = document.getElementById("coupon-code").value;
+            if (couponCode === "DISCOUNT10") {
+                let discount = subtotal * 0.10; // Example: 10% discount
+                let newTotal = subtotal + tax - discount;
+                document.getElementById("total").innerText = `Rs ${newTotal}`;
+                alert("Coupon applied successfully!");
+            } else {
+                alert("Invalid coupon code!");
+            }
+        });
+
+        // Function to update total
+        function updateTotals() {
+            let newSubtotal = 0;
+            cart.forEach(item => {
+                newSubtotal += item.price * item.quantity;
+            });
+            let newTax = newSubtotal * 0.10; // Example: 10% tax
+            document.getElementById("subtotal").innerText = `Rs ${newSubtotal}`;
+            document.getElementById("tax").innerText = `Rs ${newTax}`;
+            document.getElementById("total").innerText = `Rs ${newSubtotal + newTax}`;
+        }
+    });
+    </script>
+</body>
+
+</html>

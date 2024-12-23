@@ -1,0 +1,1052 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Fashion - Fashion Fusion</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+
+        }
+
+        .Header {
+            background-image: url("Images/Bg.jpeg");
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0px 25px;
+            height: 170px;
+            align-items: center;
+        }
+
+        .logo img {
+            filter: invert(100%)
+        }
+
+        .logo h2 {
+            color: white;
+            border: 10px white thick;
+            display: inline;
+        }
+
+        .search input {
+            height: 40px;
+            width: 130%;
+            text-align: center;
+            border-radius: 10px;
+            font: 20px cursive;
+        }
+
+        .icons {
+            text-align: right;
+        }
+
+        .icons .fa {
+            color: white;
+            font-size: 20px;
+            padding: 0px 10px;
+            transition: 0.6s;
+        }
+
+        .icons .fa:hover {
+            font-size: 180%;
+            color: aqua
+        }
+
+        .links {
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+        }
+
+        .links a {
+            color: whitesmoke;
+            display: inline;
+            padding: 5px 30px;
+            font-size: 20px;
+            text-decoration: none;
+
+            transition: 0.8s;
+            border: 2px solid pink;
+            margin-left: 40px;
+        }
+
+        .links a:hover {
+            background-color: black;
+            text-decoration: underline;
+            color: palevioletred;
+            font-size: 170%;
+
+        }
+
+        .active {
+            background-color: gray;
+            font-style: oblique;
+            color: wheat;
+        }
+
+        .drop {
+            position: relative;
+            display: inline-block;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .drop-content a {
+            background-color: #080808;
+            border: 2px solid black;
+            color: white;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .drop-content a:hover {
+            background-color: #ddd;
+            transition: none;
+        }
+
+        .drop:hover .drop-content {
+            display: block;
+        }
+
+        .MainBody {
+            background-color: Grey;
+            padding-top: 5px;
+        }
+
+        
+
+        .head {
+           
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        .head h1 {
+            margin-left: 10px;
+            font-family: 'Lucida Sans';
+            padding: 5px;
+            text-decoration: double underline;
+            font-size: 35px;
+            margin-top: 10px;
+        }
+
+        select {
+            border: 1px solid #ff523b;
+            padding: 2px;
+            height: 30px;
+            width: 30%;
+            margin-left: 65%;
+            margin-top: 20px;
+    
+            font-size: 20px;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        .Product h1 {
+            text-align: center;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            border: 5px double black;
+         
+
+        }
+
+        .item {
+            display: inline-block;
+            width: 200px;
+            margin: 10px 15px;
+            text-align: left;
+            background: #080808;
+            padding: 15px;
+            height: 330px;
+            text-align: center;
+            transition: 0.3s ease;
+            border-radius: 40px;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item img {
+            height: 250px;
+            width: 200px;
+            margin-bottom: 10px;
+            display: inline;
+            border-radius: 40px;
+        }
+
+        .item h3 {
+            color: wheat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item .price {
+            color: #4caf50;
+            font-size: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .price a {
+            font-size: 25px;
+            color: white;
+        }
+
+        .price a:hover {
+            color: red;
+            transition: 0.3s ease;
+        }
+
+        .heart-icon-link.active{
+            color:red;
+            background-color: black;
+        }
+
+        .Footer {
+            background-color: black;
+            color: white;
+            font-size: 16px;
+
+
+        }
+
+        .Footer h1 {
+            text-align: center;
+            padding: 5px 10px 10px
+        }
+
+        .content-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .content h3 {
+            padding: 4px;
+            border: 1px dashed white;
+            width: 150px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content a {
+            font-family: 'Times New Roman', Times, serif;
+            display: block;
+            color: wheat;
+            text-align: left;
+            margin-left: 25px;
+            padding: 4px;
+        }
+
+        .content a:hover {
+            color: yellow;
+        }
+
+        .cards {
+            text-align: right;
+            margin-right: 5px;
+
+        }
+
+        .cards img {
+            height: 20px;
+            width: 60px;
+        }
+
+        .cards img:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        @media screen and (max-width: 768px) {
+            .Header {
+                padding: 0px;
+                height: 150px;
+            }
+
+            .logo img {
+                margin-left: 20px;
+                height: 50px;
+            }
+
+            .logo h2 {
+                font-size: 10px;
+            }
+
+            .search input {
+                height: 30px;
+                width: 100%;
+                font: 10px cursive;
+            }
+           
+
+            .links a {
+
+                margin-left: 10px;
+                font-size: 15px;
+                padding: 5px 15px;
+
+            }
+            .links a:hover{
+            font-size: 90%;
+           }
+
+         .drop-content {
+            
+            width: 150px;
+            margin-top: 5px;
+        }
+
+        .MainBody {
+                width: 100%;
+            }
+
+            .head {
+                display: inline;
+            }
+
+            .head h1 {
+                font-size: 25px;
+            }
+
+            select {
+                display: none;
+            }
+
+            .item {
+                padding: 10px;
+                margin: 5px 20px;
+                width: 180px;
+                height: 280px;
+            }
+
+            .item img {
+                height: 220px;
+                width: 180px;
+            }
+
+            .item h3 {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .item .price {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .price a {
+                font-size: 20px;
+            }
+
+            .Footer {
+                font-size: 10px;
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-left: 25px;
+
+            }
+
+            .cards img {
+                height: 15px;
+                width: 50px;
+
+            }
+        }
+        
+        @media screen and (max-width: 425px) {
+            .Header {
+                height: 120px;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .logo h2 {
+                display: block;
+                font-size: 8px;
+            }
+
+            .search input {
+                height: 15px;
+                width: 100%;
+                font: 8px cursive;
+            }
+
+            .icons .fa {
+                font-size: 14px;
+                padding: 0px 4px;
+            }
+
+            .links {
+                display: grid;
+                grid-template-columns: repeat(3, 2fr)
+            }
+
+            .links a {
+                text-decoration: underline;
+                border: none;
+                padding: 5px 5px;
+                font-size: 10px;
+                margin-left: 0px;
+            }
+           .links a:hover{
+            font-size: 100%;
+           }
+
+        .drop-content {
+            
+            width: 150px;
+            margin-top: 5px;
+        }
+
+        .drop-content a {
+           
+            text-decoration: none;
+           
+        }
+
+            .MainBody {
+                width: 100%;
+            }
+            
+            .Product h1 {
+                font-size: 20px;
+            }
+
+            .item {
+                padding: 10px;
+                margin: 4px;
+                width: 180px;
+            }
+
+            .item img {
+                height: 220px;
+                width: 180px;
+            }
+
+            .item h3 {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .item .price {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .price a {
+                font-size: 15px;
+            }
+
+            .Footer {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            .content-box {
+
+                grid-template-columns: repeat(2, 2fr)
+            }
+
+            .content h3 {
+                border: none;
+                text-decoration: underline;
+                text-align: left;
+                margin-top: 10px;
+
+            }
+
+            .content a {
+                margin-left: 10px;
+            }
+
+
+            .cards img {
+                height: 10px;
+                width: 30px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <div class="logo">
+            <img src="Images/logo.png" alt="logo image">
+            <h2>Fashion Fusion</h2>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search For Products..">
+        </div>
+        <div class="icons">
+            <a href="fav.html"><i class="fa fa-heart"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <a href="user.html"><i class="fa fa-user-circle"></i></a>
+
+        </div>
+
+        <div class="links">
+
+            <a href="H.html">HOME</a>
+            <div class="drop">
+                <a href="Fashion.html" class="active">FASHION</a>
+                <div class="drop-content">
+                    <a href="Fashion.html">All</a>
+                    <a href="MensWear.html">Men's wear</a>
+                    <a href="WomensWear.html">Women wear</a>
+                    <a href="KidsWear.html">Kids wear</a>
+                </div>
+            </div>
+            <div class="drop">
+                <a href="Accessory.html">ACCESSORIES</a>
+                <div class="drop-content">
+                    <a href="Accessory.html">All</a>
+                    <a href="Footwear.html">FootWear</a>
+                    <a href="Beauty.html">Beauty Products</a>
+                    <a href="fitness.html">Fitness Products</a>
+                    <a href="ornaments.html">Ornaments</a>
+                    <a href="decor.html">Home Decor</a>
+                </div>
+            </div>
+            <a href="login.html">SIGNUP/LOGIN</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+
+        </div>
+    </div>
+
+    <div class="MainBody">
+
+        <div class="head">
+            <h1> WOMEN'S WEAR PRODUCTS </h1>
+            <select>
+                <option>Default Sorting</option>
+                <option>Sorting by price</option>
+                <option>Sorting by sale</option>
+                <option>Sorting by popularity</option>
+
+            </select>
+        </div>
+
+        <br>
+        <div class="Product">
+            <h1>KURTI SETS</h1>
+            <div class="item">
+                <a href="#"><img src="Images/kurti.jpeg"></a>
+                <h3>
+                    Ethnic Motifs Embroidered Sequinned Anarkali Kurta With Pant </h3>
+                <p class="price">Rs 1100/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wk1.webp"></a>
+                <h3>Women Cotton Blend Kurti Pant Dupatta Set</h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/wk2.webp"></a>
+                <h3>Polka Print Anarkali Kurta, Bottom & Dupatta Set</h3>
+                <p class="price">Under 199/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wk3.webp"></a>
+                <h3>Women Georgette Kurti Pant Dupatta Set</h3>
+                <p class="price">Rs 1299/- &nbsp &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/wk4.webp"></a>
+                <h3>Women Viscose Rayon Kurta Palazzo Set</h3>
+                <p class="price">Rs 790/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/gown.jpeg"></a>
+                <h3>Readymade Kurta Set For Women</h3>
+                <p class="price">Rs 899/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wk5.webp"></a>
+                <h3>Women Chanderi Kurta Pant Dupatta Set</h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wk6.webp"></a>
+                <h3>Women Cotton Blend Kurti Pant Set</h3>
+                <p class="price">Rs 899/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wk7.webp"></a>
+                <h3>Women Viscose Rayon Kurta Palazzo Set</h3>
+                <p class="price">Rs 999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wk8.webp"></a>
+                <h3>Women Viscose Rayon Kurta Sharara Set</h3>
+                <p class="price">Rs 609/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <br>
+            <br>
+            <h1>TOPWEAR</h1>
+            <div class="item">
+                <a href="#"><img src="Images/wt1.webp"></a>
+                <h3>Casual Regular Sleeves Printed Women Multicolor Top</h3>
+                <p class="price">Rs 649/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt2.webp"></a>
+                <h3>Casual Regular Sleeves Printed Women Black Top</h3>
+                <p class="price">Rs 279/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt3.webp"></a>
+                <h3>Women Regular Fit Self Design Spread Collar Casual Shirt </h3>
+                <p class="price">Rs 329/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt4.webp"></a>
+                <h3>Casual Regular Sleeves Solid Women Brown Top</h3>
+                <p class="price">Rs 359/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt6.webp"></a>
+                <h3>Casual Regular Sleeves Printed Women Multicolor Top </h3>
+                <p class="price">Rs 279/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt5.webp"></a>
+                <h3>Women Regular Fit Solid Cut Away Collar Casual Shirt </h3>
+                <p class="price">Rs 159/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt7.webp"></a>
+                <h3>Women Self Design Round Neck Wool Blend Pink T-Shirt</h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt8.webp"></a>
+                <h3>Casual Sleeveless Solid Women Green Top </h3>
+                <p class="price">Rs 349/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wt9.webp"></a>
+                <h3>Women Printed, Typography Round Neck Cotton Blend Purple T-Shirt </h3>
+                <p class="price">Rs 299/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/wt10.webp"></a>
+                <h3>Women Printed, Typography Round Neck Cotton Blend Black T-Shirt</h3>
+                <p class="price">Rs 199/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+            </div>
+
+            <br>
+            <br>
+            <h1>SAREES</h1>
+            <div class="item">
+                <a href="#"><img src="Images/saree.jpeg"></a>
+                <h3>Georgette And Satin Designer Saree In Dark Pink Colour In Pink Colour</h3>
+                <p class="price">Rs 849/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws1.webp"></a>
+                <h3>Temple Border, Woven Narayanpet Cotton Silk Saree</h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws2.webp"></a>
+                <h3>Printed Bollywood Georgette Saree </h3>
+                <p class="price">Rs 829/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws3.webp"></a>
+                <h3>Solid/Plain Kasavu Pure Cotton Saree</h3>
+                <p class="price">Rs 659/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws4.webp"></a>
+                <h3>Embellished Bollywood Lycra Blend Saree </h3>
+                <p class="price">Rs 629/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws5.webp"></a>
+                <h3>Woven Banarasi Cotton Silk Saree </h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws6.webp"></a>
+                <h3>Solid/Plain, Embellished Bollywood Georgette, Chiffon Saree</h3>
+                <p class="price">Rs 699/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws8.webp"></a>
+                <h3>Printed, Floral Print Daily Wear Chiffon Saree </h3>
+                <p class="price">Rs 759/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/ws7.webp"></a>
+                <h3>Woven Kanjivaram Pure Silk, Art Silk Saree </h3>
+                <p class="price">Rs 999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/ws9.webp"></a>
+                <h3>Woven, Self Design Banarasi Silk Blend, Pure Silk Saree</h3>
+                <p class="price">Rs 999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+            </div>
+            <br>
+            <br>
+            <h1>BOTTOMWEAR</h1>
+            <div class="item">
+                <a href="#"><img src="Images/wb1.webp"></a>
+                <h3>Women Boyfriend High Rise Blue Jeans</h3>
+                <p class="price">Rs 449/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb2.webp"></a>
+                <h3>Solid Women Black High Waist Shorts</h3>
+                <p class="price">Rs 239/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb3.webp"></a>
+                <h3>Solid Women Black Tights </h3>
+                <p class="price">Rs 429/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb4.webp"></a>
+                <h3>Women Flared Purple Pure Cotton Trousers</h3>
+                <p class="price">Rs 899/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb5.webp"></a>
+                <h3>Women Washed Regular Blue Skirt</h3>
+                <p class="price">Rs 599/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb6.webp"></a>
+                <h3>Women Solid Flared Maroon Skirt </h3>
+                <p class="price">Rs 289/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb7.webp"></a>
+                <h3>Women Regular High Rise Black Jeans</h3>
+                <p class="price">Rs 699/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb8.webp"></a>
+                <h3>Women Solid Straight Brown Skirt</h3>
+                <p class="price">Rs 459/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wb9.webp"></a>
+                <h3>Women Comfort Fit Brown Pure Silk Trousers</h3>
+                <p class="price">Rs 409/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/wb10.webp"></a>
+                <h3>Women Comfort Fit Brown Pure Silk Trousers</h3>
+                <p class="price">Rs 359/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+            </div>
+
+            <br>
+            <br>
+            <h1>PARTY DRESSES</h1>
+            <div class="item">
+                <a href="#"><img src="Images/wp1.webp"></a>
+                <h3>Women A-line Maroon Dress</h3>
+                <p class="price">Rs 799/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp2.webp"></a>
+                <h3>Women Sheath Pink Dress</h3>
+                <p class="price">Rs 699/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp3.webp"></a>
+                <h3>Women Fit and Flare Black Dress</h3>
+                <p class="price">Rs 409/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp4.webp"></a>
+                <h3>Women A-line Maroon Dress</h3>
+                <p class="price">Rs 999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp5.webp"></a>
+                <h3>Women Ribbed Pink Dress</h3>
+                <p class="price">Rs 599/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp6.webp"></a>
+                <h3>Women Bodycon Purple Dress</h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp7.webp"></a>
+                <h3>Women Bodycon Green Dress For Women </h3>
+                <p class="price">Rs 999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp8.webp"></a>
+                <h3>Women Bodycon Dark Blue Dress</h3>
+                <p class="price">Rs 559/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wp9.webp"></a>
+                <h3>Women Bodycon Dark Blue Dress </h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/wp10.webp"></a>
+                <h3>Women Sheath Black Dress</h3>
+                <p class="price">Rs 799/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+            </div>
+            <br>
+            <br>
+            <h1>FOOTWEAR</h1>
+            <div class="item">
+                <a href="#"><img src="Images/FooT.jpeg"></a>
+                <h3>New White Women's Dress Loafers</h3>
+                <p class="price">Rs 799/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf1.webp"></a>
+                <h3>Women Flats Sandal</h3>
+                <p class="price">Rs 399/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf2.webp"></a>
+                <h3>Women Heels Sandal </h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf3.webp"></a>
+                <h3>Women Lightweight Comfort Summer Trendy Premium Stylish Party Casual Extra Soft Wedges Sandal</h3>
+                <p class="price">Rs 299/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf4.webp"></a>
+                <h3>Sneakers For Women</h3>
+                <p class="price">Rs 799/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf5.webp"></a>
+                <h3>Women Flats Sanda</h3>
+                <p class="price">Rs 499/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf6.webp"></a>
+                <h3>Lightweight Comfort Summer Trendy Premium Stylish Boots For Women </h3>
+                <p class="price">Rs 1999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf7.webp"></a>
+                <h3>Rajasthani Embroidered Jaipuri Jutis For Women </h3>
+                <p class="price">Rs 559/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <div class="item">
+                <a href="#"><img src="Images/wf8.webp"></a>
+                <h3>Women Bellies Sandal </h3>
+                <p class="price">Rs 999/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+
+            <div class="item">
+                <a href="#"><img src="Images/heels.jpeg"></a>
+                <h3>Block Platform Heels</h3>
+                <p class="price">Rs 4199/- &nbsp;<a href="#"class="heart-icon-link"><i class="fa fa-heart-o"></i></a></p>
+
+            </div>
+            <br>
+            <br>
+
+        </div>
+    </div>
+    <br>
+    <div class="Footer">
+
+        <h1>FASHION FUSION</h1>
+        <div class="content-box">
+            <div class="content">
+                <h3>Contact us</h3>
+                <br>
+                <a href="https://www.gmail.com/"><i class="fa fa-envelope">&nbsp E Mail</i></a>
+                <a href="tel:1234567890"><i class="fa fa-phone">&nbsp PHONE NUMBER</i></a>
+
+            </div>
+            <div class="content">
+                <h3>Quick Lines</h3>
+                <br>
+                <ul>
+                    <li><a href="H.html">HOME</a></li>
+                    <li><a href="about.html">OUR STORY</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="Fashion.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Get Help</h3>
+                <br>
+                <ul>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="policy.html">PRIVATE POLICY</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Follow Us</h3>
+                <br>
+                <a href="https://www.facebook.com/"> <i class="fa fa-facebook"> &nbsp FACEBOOK</i></a>
+                <a href="https://www.instagram.com/"> <i class="fa fa-instagram"> &nbsp INSTAGRAM</i></a>
+                <a href="https://www.twitter.com/"> <i class="fa fa-twitter"> &nbsp TWITTER</i></a>
+                <a href="https://www.linkedin.com/"> <i class="fa fa-linkedin"> &nbsp LINKEDIN</i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube">&nbsp YOUTUBE</i></a>
+
+            </div>
+        </div>
+        <p>&copy; 2024 FASHION FUSION. All rights reserved</p>
+        <div class="cards">
+            <a href="https://www.visa.co.in/"><img src="Images/visa.png"></a>
+            <a href="https://pay.google.com/"><img src="Images/gpay.png"></a>
+            <a href="https://paypal.com/"><img src="Images/paypal.png"></i></a>
+            <a href="https://www.mastercard.co.in/"><img src="Images/mastercard.png"></a>
+            <a href="https://stripe.com/"><img src="Images/stripe.png"></i></a>
+        </div>
+    </div>
+
+</body>
+<script>
+    
+        //when heart item is clicked
+document.querySelectorAll('.heart-icon-link').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the link's default behavior
+        
+        // Get the item details
+        const itemName = this.closest('.item').querySelector('h3').innerText;
+        const itemPrice = this.closest('.item').querySelector('.price').innerText;
+        const itemImage = this.closest('.item').querySelector('img').src;
+
+        // Store the item details in localStorage
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Get existing favorites or empty array
+         // Check if the item is already in favorites
+         const existingItemIndex = favorites.findIndex(item => item.name === itemName);
+
+         if (existingItemIndex > -1) {
+            // If the item is already in favorites, remove it
+            favorites.splice(existingItemIndex, 1);  // Remove the item from the array
+            localStorage.setItem('favorites', JSON.stringify(favorites));  // Update localStorage
+            this.classList.remove('active');  // Remove the "active" class to reset the heart color
+        } else {
+            // If the item is not in favorites, add it
+            const newItem = { name: itemName, price: itemPrice, imageUrl: itemImage };
+            favorites.push(newItem);  // Add the new item to the favorites array
+            localStorage.setItem('favorites', JSON.stringify(favorites));  // Save to localStorage
+            this.classList.add('active');  // Add the "active" class to turn the heart red
+        }
+    });
+});
+
+// When the page loads, check if an item has been liked, and make the heart icon red
+document.addEventListener('DOMContentLoaded', function() {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Get favorites from localStorage
+    const allHearts = document.querySelectorAll('.heart-icon-link'); // Get all heart icons
+
+    // For each heart icon, check if the item is in the favorites list
+    allHearts.forEach(heart => {
+        const itemName = heart.closest('.item').querySelector('h3').innerText; // Get item name
+
+        // If the item is in the favorites list, add the "active" class to the heart
+        if (favorites.some(item => item.name === itemName)) {
+            heart.classList.add('active'); // Add the active class (making it red)
+        }
+    });
+});
+</script>
+</html>
